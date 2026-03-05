@@ -13,17 +13,14 @@ This workflow turns your agent into a research reading assistant:
 ## Skills you Need
 
 - [arxiv-reader](https://github.com/Prismer-AI/Prismer/tree/main/skills/arxiv-reader) skill (3 tools: `arxiv_fetch`, `arxiv_sections`, `arxiv_abstract`)
-- Prismer workspace container (runs the arXiv server on port 8082)
+
+No Docker or Python required — the skill runs standalone using Node.js built-ins. It downloads directly from arXiv, decompresses the LaTeX source, and flattens includes automatically.
 
 ## How to Set it Up
 
-1. Clone and deploy [Prismer](https://github.com/Prismer-AI/Prismer) with Docker (the arXiv server starts automatically):
-```bash
-git clone https://github.com/Prismer-AI/Prismer.git && cd Prismer
-docker compose -f docker/docker-compose.dev.yml up
-```
+1. Install the `arxiv-reader` skill from the [Prismer repository](https://github.com/Prismer-AI/Prismer/tree/main/skills/arxiv-reader) — copy the `skills/arxiv-reader/` directory into your OpenClaw skills folder.
 
-2. The `arxiv-reader` skill is built-in — no installation needed. Prompt OpenClaw:
+2. The skill is ready to use. Prompt OpenClaw:
 ```text
 I'm researching [topic]. Here's my workflow:
 
